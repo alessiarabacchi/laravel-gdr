@@ -9,3 +9,11 @@ class Character extends Model
 {
     use HasFactory;
 }
+
+class Character extends Model
+{
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+}

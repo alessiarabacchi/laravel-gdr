@@ -9,6 +9,8 @@ class CharacterController extends Controller
     {
         $characters = Character::all();
         return view('characters.index', compact('characters'));
+        $table->foreignId('type_id')->constrained('types');
+
     }
 
     public function create()
@@ -29,7 +31,11 @@ class CharacterController extends Controller
 
         Character::create($validatedData);
         return redirect()->route('characters.index');
+        
     }
 
-   
+       
 }
+
+   
+
