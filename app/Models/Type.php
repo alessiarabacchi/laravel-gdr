@@ -11,5 +11,9 @@ class Type extends Model
     {
         return $this->hasMany(Character::class);
     }
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class)->withPivot('quantity');
+    }
 }
 
